@@ -1,0 +1,12 @@
+# Python compiled Files
+*.py[cod]
+
+# PyCharm
+.idea
+
+# Mac OSX
+.DS_Store
+
+# Logs & Configs
+sftp-config.json
+access.log

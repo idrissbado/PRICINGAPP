@@ -1,0 +1,597 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "Project description",
+    "version": "1.0.0",
+    "title": "Annuity Pricing Model-FIT 311018",
+    "license": {
+      "name": "LEADWAY",
+      "url": ""
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Annuity Pricing Model-FIT Request",
+      "description": "Example API for requesting and return result requests"
+    }
+  ],
+  "paths": {
+    "/quotation/{fonctionName}": {
+      "post": {
+        "summary": "Calculate quotation",
+        "tags": [
+          "Quotation Request"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fonctionName",
+            "required": true,
+            "description": "Name of Quotation class fonction",
+            "schema": {
+              "$ref": "#/components/schemas/fonctionName"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Quotation Request Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/quotationRequest"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/basis/{fonctionName}": {
+      "post": {
+        "summary": "Calculate basis",
+        "tags": [
+          "Basis Request"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fonctionName",
+            "required": true,
+            "description": "Name of Quotation class fonction",
+            "schema": {
+              "$ref": "#/components/schemas/fonctionName"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Basis Request Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/basisRequest"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/commspouse/{fonctionName}": {
+      "post": {
+        "summary": "Calculate commspouse",
+        "tags": [
+          "Commspouse Request"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fonctionName",
+            "required": true,
+            "description": "Name of Commspouse class fonction",
+            "schema": {
+              "$ref": "#/components/schemas/fonctionName"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Commspouse Request Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/commspouseRequest"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/commutation/{fonctionName}": {
+      "post": {
+        "summary": "Calculate Commutation",
+        "tags": [
+          "Commutation Request"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fonctionName",
+            "required": true,
+            "description": "Name of Commutation class fonction",
+            "schema": {
+              "$ref": "#/components/schemas/fonctionName"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Commutation Request Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/commutationRequest"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/commexpense/{fonctionName}": {
+      "post": {
+        "summary": "Calculate Commexpense",
+        "tags": [
+          "Commexpense Request"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fonctionName",
+            "required": true,
+            "description": "Name of Commexpense class fonction",
+            "schema": {
+              "$ref": "#/components/schemas/fonctionName"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Commexpense Request Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/commexpenseRequest"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    },
+    "/pricing/{fonctionName}": {
+      "post": {
+        "summary": "Calculate Pricing",
+        "tags": [
+          "Pricing Request"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "fonctionName",
+            "required": true,
+            "description": "Name of Pricing class fonction",
+            "schema": {
+              "$ref": "#/components/schemas/fonctionName"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Pricing Request Object",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/pricingRequest"
+              }
+            }
+          }
+        },
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Failed. Bad post data."
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "fonctionName": {
+        "properties": {
+          "uuid": {
+            "type": "string"
+          }
+        }
+      },
+      "basisRequest": {
+        "type": "object",
+        "properties": {
+          "MarketGrossyieldRate": {
+            "type": "number",
+            "format": "number",
+            "example": "0.12"
+          },
+          "ReinvestmentRiskMargin": {
+            "type": "number",
+            "format": "number",
+            "example": "0.005"
+          },
+          "PrudentMargin": {
+            "type": "number",
+            "format": "number",
+            "example": "0.0025"
+          },
+          "Tax": {
+            "type": "number",
+            "format": "number",
+            "example": 0
+          },
+          "AnnuityFreq": {
+            "type": "number",
+            "format": "number",
+            "example": 12
+          },
+          "Expl_Inf_Rate": {
+            "type": "number",
+            "format": "number",
+            "example": 0.08
+          },
+          "Enterpremiun": {
+            "type": "number",
+            "format": "number",
+            "example": 2000000
+          },
+          "PremiumBreak1": {
+            "type": "number",
+            "format": "number",
+            "example": 5000000
+          },
+          "aun": {
+            "type": "number",
+            "format": "number",
+            "example": 0
+          },
+          "PremiumBreak2": {
+            "type": "number",
+            "format": "number",
+            "example": 10000000
+          },
+          "adeux": {
+            "type": "number",
+            "format": "number",
+            "example": -1
+          },
+          "atrois": {
+            "type": "number",
+            "format": "number",
+            "example": -3
+          },
+          "WritingAgentCommission": {
+            "type": "number",
+            "format": "number",
+            "example": 0.03
+          },
+          "UnitManagerComm": {
+            "type": "number",
+            "format": "number",
+            "example": 0.075
+          },
+          "AgencyManagerComm": {
+            "type": "number",
+            "format": "number",
+            "example": 0.05
+          },
+          "RegionalManagerComm": {
+            "type": "number",
+            "format": "number",
+            "example": 0.03
+          },
+          "DeputyNationalManager": {
+            "type": "number",
+            "format": "number",
+            "example": 0.018
+          },
+          "NationalManagerComm": {
+            "type": "number",
+            "format": "number",
+            "example": 0.022
+          },
+          "Illiquiditymargin": {
+            "type": "number",
+            "format": "number",
+            "example": 0
+          },
+          "Profitcriterion": {
+            "type": "number",
+            "format": "number",
+            "example": 0.04
+          }
+        }
+      },
+      "quotationRequest": {
+        "type": "object",
+        "properties": {
+          "ApplicationDate": {
+            "type": "string",
+            "format": "date",
+            "example": "2021-6-18"
+          },
+          "ClientDateofBirth": {
+            "type": "string",
+            "format": "date",
+            "example": "1953-8-24"
+          },
+          "SpouseDateofBirth": {
+            "type": "string",
+            "format": "date",
+            "example": "1953-8-24"
+          },
+          "Inv_Return": {
+            "type": "number",
+            "format": "number",
+            "example": 0.1125
+          },
+          "Escal_Rate": {
+            "type": "number",
+            "format": "number",
+            "example": 0
+          },
+          "Adj_disc_R": {
+            "type": "number",
+            "format": "number",
+            "example": 0.1125
+          },
+          "AnnuityFreq": {
+            "type": "number",
+            "format": "number",
+            "example": 12
+          },
+          "Annuity": {
+            "type": "number",
+            "format": "number",
+            "example": 20594.50
+          }
+        }
+      },
+      "commspouseRequest": {
+        "type": "object",
+        "properties": {
+          "sex": {
+            "type": "string",
+            "format": "string",
+            "example": "M"
+          },
+          "client_age_last_birthday": {
+            "type": "number",
+            "format": "number",
+            "example": 67
+          },
+          "Adj_disc_R": {
+            "type": "number",
+            "format": "number",
+            "example": 0.1125
+          },
+          "Guar_period": {
+            "type": "number",
+            "format": "number",
+            "example": 10
+          }
+        }
+      },
+      "commutationRequest": {
+        "type": "object",
+        "properties": {
+          "sex": {
+            "type": "string",
+            "format": "string",
+            "example": "M"
+          },
+          "client_age_last_birthday": {
+            "type": "number",
+            "format": "number",
+            "example": 67
+          },
+          "Adj_disc_R": {
+            "type": "number",
+            "format": "number",
+            "example": 0.1125
+          },
+          "Guar_period": {
+            "type": "number",
+            "format": "number",
+            "example": 10
+          }
+        }
+      },
+      "commexpenseRequest": {
+        "type": "object",
+        "properties": {
+          "sex": {
+            "type": "string",
+            "format": "string",
+            "example": "M"
+          },
+          "client_age_last_birthday": {
+            "type": "number",
+            "format": "number",
+            "example": 67
+          },
+          "Adj_Inf_Disc_Rat": {
+            "type": "number",
+            "format": "number",
+            "example": 0.03
+          },
+          "Guar_period": {
+            "type": "number",
+            "format": "number",
+            "example": 10
+          }
+        }
+      },
+      "pricingRequest": {
+        "type": "object",
+        "properties": {
+          "Adj_disc_R": {
+            "type": "number",
+            "format": "number",
+            "example": 0.1125
+          },
+          "Guar_period": {
+            "type": "number",
+            "format": "number",
+            "example": 10
+          },
+          "M_Adj_Disc_R": {
+            "type": "number",
+            "format": "number",
+            "example": 0.0089
+          },
+          "gpx": {
+            "type": "number",
+            "format": "number",
+            "example": 0.627238
+          },
+          "ax_commutation": {
+            "type": "number",
+            "format": "number",
+            "example": 5.066061706
+          },
+          "annuity_freq": {
+            "type": "number",
+            "format": "number",
+            "example": 12
+          },
+          "Var_Expperannuity": {
+            "type": "number",
+            "format": "number",
+            "example": 0
+          },
+          "ax_comexp": {
+            "type": "number",
+            "format": "number",
+            "example": 10.743902
+          },
+          "Rend_fix_exp": {
+            "type": "number",
+            "format": "number",
+            "example": 5000
+          },
+          "Initial_Expense": {
+            "type": "number",
+            "format": "number",
+            "example": 5000
+          },
+          "Profit_Mar": {
+            "type": "number",
+            "format": "number",
+            "example": 0.0137915
+          },
+          "comm_Rate": {
+            "type": "number",
+            "format": "number",
+            "example": 0.04
+          },
+          "spouse_option": {
+            "type": "number",
+            "format": "number",
+            "example": 0
+          },
+          "ax_h": {
+            "type": "number",
+            "format": "number",
+            "example": 1.202
+          },
+          "Quote_Required1": {
+            "type": "string",
+            "format": "string",
+            "example": "From Premium to Annuity"
+          },
+          "Quote_Required2": {
+            "type": "string",
+            "format": "string",
+            "example": "From Premium to Annuity"
+          },
+          "Premium": {
+            "type": "number",
+            "format": "number",
+            "example": 2000000
+          }
+        }
+      }
+    }
+  }
+}
